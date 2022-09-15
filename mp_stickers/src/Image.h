@@ -4,23 +4,22 @@
  */
 
 #pragma once
-using namespace std;
-using namespace cs225;
+
 #include "cs225/PNG.h"
 #include "cs225/HSLAPixel.h"
 #include <iostream>
-using std::cerr;
-using std::endl;
-
 #include <string>
-using std::string;
-
-#include <vector>
-using std::vector;
-
 #include <cassert>
 #include <algorithm>
 #include <functional>
+#include <vector>
+using namespace cs225;
+using std::cerr;
+using std::endl;
+using std::min;
+using std::max;
+using std::string;
+using std::vector;
 
 class Image: public cs225::PNG{
     public:
