@@ -29,11 +29,17 @@ namespace QuackFun {
 template <typename T>
 T sum(stack<T>& s)
 {
+    if(s.size() == 0){
+        return T();
+    }
 
     // Your code here
-    return T(); // stub return value (0 for primitive types). Change this!
-                // Note: T() is the default value for objects, and 0 for
-                // primitive types
+    T temp = s.top();
+    s.pop();
+    T returnVal = temp + sum(s);
+    s.push(temp);               // stub return value (0 for primitive types). Change this!
+    return returnVal;            // Note: T() is the default value for objects, and 0 for
+                                // primitive types
 }
 
 /**
@@ -55,7 +61,25 @@ T sum(stack<T>& s)
  */
 bool isBalanced(queue<char> input)
 {
+    stack<char>currStack;
+    while(!input.empty()){
+        if(input.front() == '['){
+            currStack.push('[');
+        }
+        else if(input.front() == ']'){
+            if(currStack.size() > 0){
+                currStack.pop();
+            }
+            else{
+                return false;
+            }
+        }
+        input.pop();
+    }
 
+    if(currStack.size() != 0){
+        return false;
+    }
     // @TODO: Make less optimistic
     return true;
 }
@@ -79,6 +103,32 @@ template <typename T>
 void scramble(queue<T>& q)
 {
     stack<T> s;
+    int len = q.size();
+    int curr = 0;
+    while(len > 0){
+        curr++;
+        int cycle = std::min(curr, len);
+        if(curr % 2 == 1){
+            for(int i = 0; i < cycle; i++){
+                int temp = q.front();
+                q.pop();
+                q.push(temp);
+                len--;
+            }
+        }
+        else if(curr % 2 == 0){
+            for(int i = 0; i < cycle; i++){
+                s.push(q.front());
+                q.pop();
+                len--;
+            }
+            for(int i = 0; i < cycle; i++){
+                q.push(s.top());
+                s.pop();
+            }
+        }
+    }
+    
     // optional: queue<T> q2;
 
     // Your code here

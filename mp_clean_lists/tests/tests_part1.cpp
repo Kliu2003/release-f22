@@ -212,7 +212,10 @@ TEST_CASE("List::ListIterator::operator-- moves the iterator backwards", "[weigh
 
     iter++;  REQUIRE( *iter == 8 );
     iter++;  REQUIRE( *iter == 7 );
-    iter--;  REQUIRE( *iter == 8 );
+    iter--; 
+    cout<<*iter<<endl;
+    REQUIRE( *iter == 8 );
+    //Doesn't print here
     iter--;  REQUIRE( *iter == 9 );
 }
 
