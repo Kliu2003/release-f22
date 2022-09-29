@@ -206,6 +206,12 @@ class BinaryTree
          * @param treeVector stores nodes in order
          */
         void inOrder(Node *subRoot, std::vector<T>& treeVector);
+
+        void mirrorHelper(Node* rootNode);
+
+        bool isOrderedIterativeHelper(Node* rootNode) const;
+        
+        bool isOrderedRecursiveHelper(Node* rootNode, T min, T max) const;
 };
 
 #include "binarytree_given.hpp"

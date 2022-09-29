@@ -75,10 +75,23 @@ void BinaryTree<T>::printLeftToRight(const Node* subRoot) const
  * Flips the tree over a vertical axis, modifying the tree itself
  *  (not creating a flipped copy).
  */
-    template <typename T>
+template <typename T>
 void BinaryTree<T>::mirror()
 {
-    //your code here
+    mirrorHelper(root);
+}
+template <typename T>
+void BinaryTree<T>::mirrorHelper(Node* rootNode){
+    Node* temp = rootNode->left;
+    rootNode->left = rootNode->right;
+    rootNode->right = temp;
+    if(rootNode->left != NULL){
+        mirrorHelper(rootNode->left);
+    }
+    if(rootNode->right != NULL){
+        mirrorHelper(rootNode->right);
+    }
+    return;
 }
 
 
@@ -92,8 +105,36 @@ template <typename T>
 bool BinaryTree<T>::isOrderedIterative() const
 {
     // your code here
-    return false;
+    return isOrderedIterativeHelper(root);
 }
+
+template <typename T>
+bool BinaryTree<T>::isOrderedIterativeHelper(Node* rootNode) const
+{
+    // your code here
+    if(rootNode == NULL){
+        return true;
+    }
+    
+    std::stack<Node*> nodeStack;
+    Node* curr = rootNode;
+    Node* prev = NULL;
+    while(curr != NULL || !nodeStack.empty()){
+        while(curr != NULL){
+            nodeStack.push(curr);
+            curr = curr->left;
+        }
+        curr = nodeStack.top();
+        nodeStack.pop();
+        if(prev != NULL && prev->elem >= curr->elem){
+            return false;
+        }
+        prev = curr;
+        curr = curr->right;
+    }
+    return true;
+}
+
 
 /**
  * isOrdered() function recursive version
@@ -105,6 +146,19 @@ template <typename T>
 bool BinaryTree<T>::isOrderedRecursive() const
 {
     // your code here
-    return false;
+    return isOrderedRecursiveHelper(root, -100000, 100000);
 }
+template <typename T>
+bool BinaryTree<T>::isOrderedRecursiveHelper(Node* rootNode, T min, T max) const
+{
+    if(rootNode == NULL){
+        return true;
+    }
+    if(rootNode->elem > max || rootNode->elem < min){
+        return false;
+    }
+
+    return isOrderedRecursiveHelper(rootNode->left, min, rootNode->elem) && isOrderedRecursiveHelper(rootNode->right, rootNode->elem, max);
+}
+
 
