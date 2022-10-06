@@ -92,6 +92,8 @@ class BST
      */
     void remove(const K& key);
 
+    
+
     /**
      * Finds an element in the BST tree.
      * @param key The element to search for
@@ -152,6 +154,8 @@ class BST
      * @param key The key to remove
      */
     void remove(Node*& node, const K& key);
+
+    struct BST<K, V>::Node* & findInOrderPredecessor(Node*& node);
 
     /**
      * Finds a value (by key) in the BST tree.

@@ -59,7 +59,6 @@ TEST_CASE("test_insert 1", "[weight=5]"){
     }
 
     std::sort(nodes.begin(), nodes.end());
-
     match_walk(tree, nodes);
 }
 
@@ -197,7 +196,6 @@ TEST_CASE("test_remove (0 child)", "[weight=5]"){
 
     tree.remove(40);
     tree.remove(93);
-
     nodes.clear(); 
     nodes.push_back(58); 
     nodes.push_back(35); 
@@ -208,9 +206,7 @@ TEST_CASE("test_remove (0 child)", "[weight=5]"){
     nodes.push_back(19); 
     nodes.push_back(61); 
 
-
     std::sort(nodes.begin(), nodes.end());
-
     match_walk(tree, nodes);
 }
 
@@ -233,7 +229,6 @@ TEST_CASE("test_remove (1 child)", "[weight=5]"){
     nodes.push_back(2);
 
     std::sort(nodes.begin(), nodes.end());
-
     match_walk(tree, nodes);
 }
 
@@ -247,7 +242,6 @@ TEST_CASE("test_remove (2 child)", "[weight=5]"){
     tree.insert(8, 5);
     tree.insert(11, 6);
     tree.insert(2, 7);
-
     tree.remove(9);
     tree.remove(5);
 

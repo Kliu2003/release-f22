@@ -80,7 +80,6 @@ TEST_CASE("BFS visits the correct pixel first", "[weight=2][part=1]") {
 TEST_CASE("DFS visits all points within a tolerance", "[weight=1][part=1]") {
   PNG png = getTestPNG();
   Point startPoint(1, 1);
-  
   DFS t(png, startPoint, 0.2);
   unsigned count = 0;
   for (const Point & p : t) {

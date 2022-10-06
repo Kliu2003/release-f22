@@ -8,6 +8,7 @@
 #include <cmath>
 #include <list>
 #include <stack>
+#include <vector>
 
 #include "cs225/PNG.h"
 #include "../Point.h"
@@ -35,4 +36,9 @@ public:
 private:
 	/** @todo [Part 1] */
 	/** add private members here*/
+  std::stack<Point>dfs_;
+  PNG png_;
+  Point startPoint_;
+  double tolerance_;
+
 };
