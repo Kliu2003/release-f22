@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/CS225 Labs/LabsMP/mp_stickers/src
+# Install script for directory: /workspaces/CS225/release-f22/mp_stickers/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

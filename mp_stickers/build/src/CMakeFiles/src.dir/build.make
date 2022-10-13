@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/workspaces/CS225 Labs/LabsMP/mp_stickers"
+CMAKE_SOURCE_DIR = /workspaces/CS225/release-f22/mp_stickers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/workspaces/CS225 Labs/LabsMP/mp_stickers/build"
+CMAKE_BINARY_DIR = /workspaces/CS225/release-f22/mp_stickers/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/src.dir/depend.make
@@ -72,30 +72,30 @@ include src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/Image.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/Image.cpp.o: ../src/Image.cpp
 src/CMakeFiles/src.dir/Image.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/Image.cpp.o"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/Image.cpp.o -MF CMakeFiles/src.dir/Image.cpp.o.d -o CMakeFiles/src.dir/Image.cpp.o -c "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/Image.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/Image.cpp.o"
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/Image.cpp.o -MF CMakeFiles/src.dir/Image.cpp.o.d -o CMakeFiles/src.dir/Image.cpp.o -c /workspaces/CS225/release-f22/mp_stickers/src/Image.cpp
 
 src/CMakeFiles/src.dir/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/Image.cpp.i"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/Image.cpp" > CMakeFiles/src.dir/Image.cpp.i
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS225/release-f22/mp_stickers/src/Image.cpp > CMakeFiles/src.dir/Image.cpp.i
 
 src/CMakeFiles/src.dir/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/Image.cpp.s"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/Image.cpp" -o CMakeFiles/src.dir/Image.cpp.s
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225/release-f22/mp_stickers/src/Image.cpp -o CMakeFiles/src.dir/Image.cpp.s
 
 src/CMakeFiles/src.dir/StickerSheet.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/StickerSheet.cpp.o: ../src/StickerSheet.cpp
 src/CMakeFiles/src.dir/StickerSheet.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/StickerSheet.cpp.o"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/StickerSheet.cpp.o -MF CMakeFiles/src.dir/StickerSheet.cpp.o.d -o CMakeFiles/src.dir/StickerSheet.cpp.o -c "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/StickerSheet.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/StickerSheet.cpp.o"
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/StickerSheet.cpp.o -MF CMakeFiles/src.dir/StickerSheet.cpp.o.d -o CMakeFiles/src.dir/StickerSheet.cpp.o -c /workspaces/CS225/release-f22/mp_stickers/src/StickerSheet.cpp
 
 src/CMakeFiles/src.dir/StickerSheet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/StickerSheet.cpp.i"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/StickerSheet.cpp" > CMakeFiles/src.dir/StickerSheet.cpp.i
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS225/release-f22/mp_stickers/src/StickerSheet.cpp > CMakeFiles/src.dir/StickerSheet.cpp.i
 
 src/CMakeFiles/src.dir/StickerSheet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/StickerSheet.cpp.s"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS225 Labs/LabsMP/mp_stickers/src/StickerSheet.cpp" -o CMakeFiles/src.dir/StickerSheet.cpp.s
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225/release-f22/mp_stickers/src/StickerSheet.cpp -o CMakeFiles/src.dir/StickerSheet.cpp.s
 
 # Object files for target src
 src_OBJECTS = \
@@ -109,19 +109,19 @@ src/libsrc.a: src/CMakeFiles/src.dir/Image.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/StickerSheet.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsrc.a"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsrc.a"
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/src.dir/build: src/libsrc.a
 .PHONY : src/CMakeFiles/src.dir/build
 
 src/CMakeFiles/src.dir/clean:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean.cmake
+	cd /workspaces/CS225/release-f22/mp_stickers/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/src.dir/clean
 
 src/CMakeFiles/src.dir/depend:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/workspaces/CS225 Labs/LabsMP/mp_stickers" "/workspaces/CS225 Labs/LabsMP/mp_stickers/src" "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src" "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src/CMakeFiles/src.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/CS225/release-f22/mp_stickers /workspaces/CS225/release-f22/mp_stickers/src /workspaces/CS225/release-f22/mp_stickers/build /workspaces/CS225/release-f22/mp_stickers/build/src /workspaces/CS225/release-f22/mp_stickers/build/src/CMakeFiles/src.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/src.dir/depend
 

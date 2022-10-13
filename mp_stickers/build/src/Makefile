@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/workspaces/CS225 Labs/LabsMP/mp_stickers"
+CMAKE_SOURCE_DIR = /workspaces/CS225/release-f22/mp_stickers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/workspaces/CS225 Labs/LabsMP/mp_stickers/build"
+CMAKE_BINARY_DIR = /workspaces/CS225/release-f22/mp_stickers/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles" "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/src//CMakeFiles/progress.marks"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles" 0
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles /workspaces/CS225/release-f22/mp_stickers/build/src//CMakeFiles/progress.marks
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,23 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -P "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles/VerifyGlobs.cmake"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -P /workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/src.dir/rule:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
 .PHONY : src/CMakeFiles/src.dir/rule
 
 # Convenience name for target.
@@ -128,7 +128,7 @@ src: src/CMakeFiles/src.dir/rule
 
 # fast build rule for target.
 src/fast:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
 Image.o: Image.cpp.o
@@ -136,7 +136,7 @@ Image.o: Image.cpp.o
 
 # target to build an object file
 Image.cpp.o:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.o
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.o
 .PHONY : Image.cpp.o
 
 Image.i: Image.cpp.i
@@ -144,7 +144,7 @@ Image.i: Image.cpp.i
 
 # target to preprocess a source file
 Image.cpp.i:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.i
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.i
 .PHONY : Image.cpp.i
 
 Image.s: Image.cpp.s
@@ -152,7 +152,7 @@ Image.s: Image.cpp.s
 
 # target to generate assembly for a file
 Image.cpp.s:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.s
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.s
 .PHONY : Image.cpp.s
 
 StickerSheet.o: StickerSheet.cpp.o
@@ -160,7 +160,7 @@ StickerSheet.o: StickerSheet.cpp.o
 
 # target to build an object file
 StickerSheet.cpp.o:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.o
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.o
 .PHONY : StickerSheet.cpp.o
 
 StickerSheet.i: StickerSheet.cpp.i
@@ -168,7 +168,7 @@ StickerSheet.i: StickerSheet.cpp.i
 
 # target to preprocess a source file
 StickerSheet.cpp.i:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.i
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.i
 .PHONY : StickerSheet.cpp.i
 
 StickerSheet.s: StickerSheet.cpp.s
@@ -176,7 +176,7 @@ StickerSheet.s: StickerSheet.cpp.s
 
 # target to generate assembly for a file
 StickerSheet.cpp.s:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.s
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StickerSheet.cpp.s
 .PHONY : StickerSheet.cpp.s
 
 # Help Target
@@ -205,7 +205,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -P "/workspaces/CS225 Labs/LabsMP/mp_stickers/build/CMakeFiles/VerifyGlobs.cmake"
-	cd "/workspaces/CS225 Labs/LabsMP/mp_stickers/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -P /workspaces/CS225/release-f22/mp_stickers/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/CS225/release-f22/mp_stickers/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
