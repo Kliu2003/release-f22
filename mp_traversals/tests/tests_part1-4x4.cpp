@@ -83,6 +83,7 @@ TEST_CASE("DFS visits all points within a tolerance", "[weight=1][part=1]") {
   DFS t(png, startPoint, 0.2);
   unsigned count = 0;
   for (const Point & p : t) {
+    std::cout<<count<<std::endl;
     count++;
   }
   REQUIRE( count == 4 );

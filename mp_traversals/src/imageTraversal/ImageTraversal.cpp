@@ -66,26 +66,30 @@ ImageTraversal::Iterator & ImageTraversal::Iterator::operator++() {
   if(!traversal_->empty()){
     
     currPoint_ = traversal_->pop();
+
+    visited_[currPoint_.x][currPoint_.y] = true;
     
     Point right = Point(currPoint_.x+1, currPoint_.y);
     Point down = Point(currPoint_.x, currPoint_.y+1);
     Point left = Point(currPoint_.x-1, currPoint_.y);
     Point up = Point(currPoint_.x, currPoint_.y-1);
 
-    if(right.x < png_.width() && !visited_[right.x][right.y] && calculateDelta(png_.getPixel(right.x, right.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
+    if(right.x < png_.width() && right.x >= 0 && !visited_[right.x][right.y] && calculateDelta(png_.getPixel(right.x, right.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
       traversal_->add(right);
     }
-    if(down.y < png_.height() && !visited_[down.x][down.y] && calculateDelta(png_.getPixel(down.x, down.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
+    if(down.y < png_.height() && down.y >= 0 && !visited_[down.x][down.y] && calculateDelta(png_.getPixel(down.x, down.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
       traversal_->add(down);
     }
-    if(left.x >= 0 && !visited_[left.x][left.y] && calculateDelta(png_.getPixel(left.x, left.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
+    if(left.x < png_.width() && left.x >= 0 && !visited_[left.x][left.y] && calculateDelta(png_.getPixel(left.x, left.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
       traversal_->add(left);
     }
-    if(up.y >= 0 && !visited_[up.x][up.y] && calculateDelta(png_.getPixel(up.x, up.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
+    if(up.y < png_.height() && up.y >= 0 && !visited_[up.x][up.y] && calculateDelta(png_.getPixel(up.x, up.y), png_.getPixel(startPoint_.x, startPoint_.y)) <= tolerance_){
       traversal_->add(up);
     }
 
-    visited_[currPoint_.x][currPoint_.y] = true;
+    while(!traversal_->empty() && visited_[traversal_->peek().x][traversal_->peek().y]){
+      traversal_->pop();
+    }
     
     if(!traversal_->empty()){
       currPoint_ = traversal_->peek();
@@ -112,6 +116,26 @@ Point ImageTraversal::Iterator::operator*() {
 bool ImageTraversal::Iterator::operator!=(const ImageTraversal::Iterator &other) {
   /** @todo [Part 1] */
   
-  return !(this->currPoint_ == other.currPoint_);
+  bool isEmpty = false;
+  bool otherIsEmpty = false;
+
+  if (traversal_ == NULL){
+    isEmpty = true;
+  }
+  if (other.traversal_ == NULL){
+    otherIsEmpty = true;
+  } 
+  if (!isEmpty){
+    isEmpty = traversal_->empty();
+  }
+  if (!otherIsEmpty){
+    otherIsEmpty = other.traversal_->empty();
+  } 
+  if (isEmpty && otherIsEmpty){
+    return false;
+  } 
+
+  return true;
+
 }
 

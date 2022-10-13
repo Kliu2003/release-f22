@@ -21,12 +21,25 @@ int main() {
   // - The code provided below produces the `myFloodFill.png` file you must
   //   submit Part 3 of this assignment -- uncomment it when you're ready.
   
-  /*
+  PNG PacPNG;
+  PacPNG.readFromFile("../tests/pacman.png");
+
+  FloodFilledImage image(PacPNG);
+  BFS bfs(PacPNG, Point(1, 1), 0.2);
+  MyColorPicker mycolor1(0.4);
+  image.addFloodFill(bfs, mycolor1);
+
+  Animation animation = image.animate(1000);
+  
+  DFS dfs(PacPNG, Point(1, 1), 0.2);
+  MyColorPicker mycolor2(0.6);
+  image.addFloodFill(dfs, mycolor2);
+
+  animation = image.animate(1000);
+  
   PNG lastFrame = animation.getFrame( animation.frameCount() - 1 );
   lastFrame.writeToFile("myFloodFill.png");
   animation.write("myFloodFill.gif");
-  */
-
 
   return 0;
 }

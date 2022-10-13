@@ -4,6 +4,8 @@
  * You'll need to modify this file.
  */
 
+#include <math.h>
+
 template <class K, class V>
 V AVLTree<K, V>::find(const K& key) const
 {
@@ -30,6 +32,12 @@ void AVLTree<K, V>::rotateLeft(Node*& t)
 {
     functionCalls.push_back("rotateLeft"); // Stores the rotation name (don't remove this)
     // your code here
+    Node* currRight = t->right;
+    t->right = t->right->left;
+    currRight->left = t;
+    t = currRight;
+    t->height = 1+std::max(heightOrNeg1(t->left), heightOrNeg1(t->right));
+    t->left->height = 1+std::max(heightOrNeg1(t->left->left), heightOrNeg1(t->left->right));
 }
 
 template <class K, class V>
@@ -46,6 +54,12 @@ void AVLTree<K, V>::rotateRight(Node*& t)
 {
     functionCalls.push_back("rotateRight"); // Stores the rotation name (don't remove this)
     // your code here
+    Node* currLeft = t->left;
+    t->left = t->left->right;
+    currLeft->right = t;
+    t = currLeft;
+    t->height = 1+std::max(heightOrNeg1(t->left), heightOrNeg1(t->right));
+    t->right->height = 1+std::max(heightOrNeg1(t->right->left), heightOrNeg1(t->right->right));
 }
 
 template <class K, class V>
@@ -53,12 +67,41 @@ void AVLTree<K, V>::rotateRightLeft(Node*& t)
 {
     functionCalls.push_back("rotateRightLeft"); // Stores the rotation name (don't remove this)
     // your code here
+    rotateRight(t->right);
+    rotateLeft(t);
 }
 
 template <class K, class V>
 void AVLTree<K, V>::rebalance(Node*& subtree)
 {
+    if(subtree == NULL){
+        return;
+    }
     // your code here
+    Node* leftChild = subtree->left;
+    Node* rightChild = subtree->right;
+
+    int balanceFactor = heightOrNeg1(leftChild) - heightOrNeg1(rightChild);
+
+    if(balanceFactor > 1){
+        int balanceFactorLeft = heightOrNeg1(leftChild->left) - heightOrNeg1(leftChild->right);
+        if(balanceFactorLeft > 0){
+            rotateRight(subtree);
+        }
+        else{
+            rotateLeftRight(subtree);
+        }
+    }
+    else if(balanceFactor < -1){
+        int balanceFactorRight = heightOrNeg1(rightChild->left) - heightOrNeg1(rightChild->right);
+        if(balanceFactorRight < 0){
+            rotateLeft(subtree);
+        }
+        else{
+            rotateRightLeft(subtree);
+        }
+    }
+    return;
 }
 
 template <class K, class V>
@@ -70,7 +113,24 @@ void AVLTree<K, V>::insert(const K & key, const V & value)
 template <class K, class V>
 void AVLTree<K, V>::insert(Node*& subtree, const K& key, const V& value)
 {
-    // your code here
+    if(subtree == NULL){
+        Node* newNode = new Node(key, value);
+        subtree = newNode;
+        return;
+    }
+    else if(subtree->key == key){
+        return;
+    }
+    else if(subtree->key < key){
+        insert(subtree->right, key, value);
+        rebalance(subtree);
+    }
+    else if(subtree->key > key){
+        insert(subtree->left, key ,value);
+        rebalance(subtree);
+    }
+    subtree->height = 1 + std::max(heightOrNeg1(subtree->left), heightOrNeg1(subtree->right));
+    return;
 }
 
 template <class K, class V>
@@ -80,26 +140,49 @@ void AVLTree<K, V>::remove(const K& key)
 }
 
 template <class K, class V>
+struct AVLTree<K, V>::Node* & AVLTree<K, V>::findInOrderPredecessor(Node*& subtree){
+    if(subtree->right == NULL){
+        return subtree;
+    }
+    return findInOrderPredecessor(subtree->right);
+}
+
+template <class K, class V>
 void AVLTree<K, V>::remove(Node*& subtree, const K& key)
 {
-    if (subtree == NULL)
-        return;
-
     if (key < subtree->key) {
-        // your code here
-    } else if (key > subtree->key) {
-        // your code here
-    } else {
-        if (subtree->left == NULL && subtree->right == NULL) {
-            /* no-child remove */
-            // your code here
-        } else if (subtree->left != NULL && subtree->right != NULL) {
-            /* two-child remove */
-            // your code here
-        } else {
-            /* one-child remove */
-            // your code here
+        remove(subtree->left, key);    
+    } 
+    else if (key > subtree->key) {
+        remove(subtree->right, key);
+    } 
+    else{
+        if(subtree == NULL){
+            return;
         }
-        // your code here
+        else if(subtree->left == NULL && subtree->right == NULL){
+            delete subtree;
+            subtree = NULL;
+            return;
+        }
+        else if(subtree->left == NULL){
+            Node* temp = subtree->right;
+            delete subtree;
+            subtree = temp;
+            return;
+        }
+        else if(subtree->right == NULL){
+            Node* temp = subtree->left;
+            delete subtree;
+            subtree = temp;
+            return;
+        }
+        else{
+            Node*& inOrderPredecessor = findInOrderPredecessor(subtree->left);
+            swap(subtree, inOrderPredecessor);
+            remove(inOrderPredecessor, inOrderPredecessor->key);
+        }
     }
+    subtree->height = 1 + std::max(heightOrNeg1(subtree->left), heightOrNeg1(subtree->right));
+    rebalance(subtree);
 }

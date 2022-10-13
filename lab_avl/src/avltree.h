@@ -146,6 +146,8 @@ class AVLTree
      */
     void remove(Node*& node, const K& key);
 
+    struct AVLTree<K, V>::Node* & findInOrderPredecessor(Node*& node);
+
     /**
      * Finds a value (by key) in the AVL tree.
      * @param node The node to search from (current subroot)

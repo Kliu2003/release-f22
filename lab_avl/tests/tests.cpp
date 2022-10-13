@@ -50,6 +50,8 @@ TEST_CASE("test_insert_small", "[weight=5]") {
     vector<int> solnTraversal = {4, 1, 5};
     vector<string> solnFuncCalls = {"rotateLeft"};
 
+    tree.print();
+
     verifyTree(tree, solnTraversal, solnFuncCalls);
 }
 
