@@ -69,8 +69,7 @@ bool BTree<K, V>::is_valid(unsigned int order /* = 64 */) const
     if (root == nullptr)
         return true;
     std::vector<DataPair> data;
-    return is_valid(root, data, order)
-           && std::is_sorted(data.begin(), data.end());
+    return is_valid(root, data, order) && std::is_sorted(data.begin(), data.end());
 }
 
 /**
@@ -84,6 +83,7 @@ bool BTree<K, V>::is_valid(const BTreeNode* subroot, std::vector<DataPair>& data
                            unsigned int order) const
 {
     if (subroot->elements.size() >= order) {
+        std::cout<<"reached here"<<std::endl;
         return false;
     }
 
